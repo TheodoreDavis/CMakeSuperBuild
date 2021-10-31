@@ -52,6 +52,7 @@ install(
 install(
     EXPORT ${PROJECT_NAME}-targets
     NAMESPACE ${PROJECT_NAME}::
+    FILE ${PROJECT_NAME}Config.cmake
     DESTINATION ${CMAKE_INSTALL_LIBDIR}/helloworld/cmake
 )
 
@@ -63,7 +64,7 @@ set(config_file_name "${PROJECT_BINARY_DIR}/helloworld-config.cmake")
 configure_package_config_file(
     ${CMAKE_CURRENT_SOURCE_DIR}/cmake/Config.cmake.in
     "${config_file_name}"
-    INSTALL_DESTINATION ${CMAKE_INSTALL_FULL_LIBDIR}/cmake/helloworld
+    INSTALL_DESTINATION ${CMAKE_INSTALL_FULL_LIBDIR}/helloworld/cmake
 )
 
 # Export package config file
