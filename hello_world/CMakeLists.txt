@@ -48,13 +48,7 @@ install(
 )
 
 # Exports the HelloWorld target
-# Tells CMake where to find files and build this project
-install(
-    EXPORT ${PROJECT_NAME}-targets
-    NAMESPACE ${PROJECT_NAME}::
-    FILE ${PROJECT_NAME}Config.cmake
-    DESTINATION ${CMAKE_INSTALL_LIBDIR}/helloworld/cmake
-)
+
 
 include(CMakePackageConfigHelpers)
 
@@ -67,8 +61,16 @@ configure_package_config_file(
     INSTALL_DESTINATION ${CMAKE_INSTALL_FULL_LIBDIR}/helloworld/cmake
 )
 
-# Export package config file
-install(FILES
-    "${config_file_name}"
+# # Export package config file
+# install(FILES
+#     "${config_file_name}"
+#     DESTINATION ${CMAKE_INSTALL_LIBDIR}/helloworld/cmake
+# )
+
+# Tells CMake where to find files and build this project
+install(
+    EXPORT ${PROJECT_NAME}-targets
+    NAMESPACE ${PROJECT_NAME}::
+    FILE "${config_file_name}"
     DESTINATION ${CMAKE_INSTALL_LIBDIR}/helloworld/cmake
 )
