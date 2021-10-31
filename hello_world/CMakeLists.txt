@@ -52,7 +52,7 @@ install(
 install(
     EXPORT ${PROJECT_NAME}-targets
     NAMESPACE ${PROJECT_NAME}::
-    FILE $(PROJECT_NAME)-targets.cmake
+    FILE ${PROJECT_NAME}-targets.cmake
     DESTINATION ${CMAKE_INSTALL_LIBDIR}/helloworld/cmake
 )
 
